@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Random Radio Control</title>
+  <style>
+    body{font-family:Arial,sans-serif;margin:2rem;background:#f8f8f8;}
+    .track{font-size:1.5rem;margin-bottom:1rem;}
+    .controls button{margin-right:0.5rem;}
+    .history{margin-top:2rem;}
+  </style>
+</head>
+<body>
+  <h1>Random Radio</h1>
+
+  <div class="track">
+    Now playing:<br>
+    <strong>{{ album }}</strong> – <em>{{ track }}</em>
+  </div>
+
+  <div class="controls">
+    <form action="/skip" method="post" style="display:inline"><button>Skip</button></form>
+    <form action="/pause" method="post" style="display:inline"><button>Pause</button></form>
+    <form action="/play" method="post" style="display:inline"><button>Play</button></form>
+  </div>
+
+  <hr>
+
+  <div>
+    <form action="/command" method="post">
+      <input type="text" name="cmd" placeholder="Type a command (e.g. skip, now, search love)" style="width:70%">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div class="history">
+    <h2>Recent history (last 12 ticks)</h2>
+    <ul>
+      {% for e in history %}
+      <li>{{ e.timestamp }} – <strong>{{ e.album }}</strong> – {{ e.track }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

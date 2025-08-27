@@ -1,0 +1,11 @@
+pydub
+tqdm
+ollama
+pyttsx3
+SpeechRecognition
+pyaudio
+flask
+streamlit
+pymysql      # optional – for DB history
+# (add any other libs you added)
+
