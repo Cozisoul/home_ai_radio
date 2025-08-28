@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
 Random Radio – Portable DJ powered by VLC, Ollama & (optional) Pillow.
-
-Author : 2024‑09‑13 – OpenAI ChatGPT
 """
 
 # ----------------------------------------------------------------------
